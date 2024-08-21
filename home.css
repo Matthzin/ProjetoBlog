@@ -68,12 +68,16 @@ a {
 }
 
 .artigo-destaque {
+    border: 1px solid black;
+    background-color: aqua;
     width: 100%;
     height: 80vh;
 }
 
 .artigo-recente {
+    border: 1px solid black;
+    background-color: aqua;
     width: 100%;
-    height: 20vh;
+    height: 80vh;
 }
 
