@@ -10,18 +10,23 @@
   <body>
     <header>
       <div class="logo">
-        <a href="#">Projeto Blog</a>
+        <a href="home.html">Projeto Blog</a>
       </div>
       <nav>
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">Publicações</a></li>
           <li><a href="#">Sobre</a></li>
-          <a href="#">Nova Postagem</a>
+          <a href="publicar.html">Nova Postagem</a>
         </ul>
       </nav>
     </header>
     <main>
+
+
+
+
+
       <div class="container">
         <section class="container-destaque">
           <div class="container-titulo-destaque">
@@ -37,5 +42,60 @@
         </section>
       </div>
     </main>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const postagens = JSON.parse(localStorage.getItem('postagens')) || [];
+
+          const artigoDestaque = document.getElementById('artigo-destaque');
+          const artigoRecente = document.getElementById('artigo-recente');
+
+          if (postagens.length > 0) {
+            const postagem = postagens[0];
+            const postagemDiv = document.createElement('div');
+            postagemDiv.classList.add('postagem');
+
+            const titulo = document.createElement('h3');
+            titulo.textContent = postagem.titulo;
+            postagemDiv.appendChild(titulo);
+
+            const conteudo = document.createElement('p');
+            conteudo.textContent = postagem.conteudo;
+            postagemDiv.appendChild(conteudo);
+
+            const data = document.createElement('p');
+            data.classList.add('data');
+            data.textContent = `Publicado em: ${postagem.data}`;
+            postagemDiv.appendChild(data);
+
+            artigoDestaque.appendChild(postagemDiv);
+
+            for (let i = 1; i < postagens.length; i++) {
+                const postagemRecent = postagens[i];
+
+                const postagemRecentDiv = document.createElement('div');
+                postagemRecentDiv.classList.add('postagem-recent');
+
+                const tituloRecent = document.createElement('h3');
+                tituloRecent.textContent = postagemRecent.titulo;
+                postagemRecentDiv.appendChild(tituloRecent);
+
+                const conteudoRecent = document.createElement('p');
+                conteudoRecent.textContent = postagemRecent.conteudo;
+                postagemRecentDiv.appendChild(conteudoRecent);
+
+                const dataRecent = document.createElement('p');
+                dataRecent.classList.add('data');
+                dataRecent.textContent = `Publicado em: ${postagemRecent.data}`;
+                postagemRecentDiv.appendChild(dataRecent);
+
+                artigoRecente.appendChild(postagemRecentDiv);
+              }
+            } else {
+              const mensagem = document.createElement('p');
+              mensagem.textContent = 'Não há postagens para exibir.';
+              artigoDestaque.appendChild(mensagem);
+            }
+        });
+      </script>
   </body>
 </html>

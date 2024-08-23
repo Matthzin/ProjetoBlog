@@ -9,21 +9,58 @@
 <body>
     <header>
       <div class="logo">
-        <a href="#">Projeto Blog</a>
+        <a href="home.html">Projeto Blog</a>
       </div>
       <nav>
         <ul>
-          <li><a href="#">Home</a></li>
+          <li><a href="home.html">Home</a></li>
           <li><a href="#">Publicações</a></li>
           <li><a href="#">Sobre</a></li>
-          <a href="#">Nova Postagem</a>
         </ul>
       </nav>
     </header>
     <main>
         <div class="container">
-            div escrever postagem
+          <h2>Escrever Nova Postagem</h2><br>
+          <form id="blogForm">
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Digite o título da postagem" required>
+
+            <label for="conteudo">Conteúdo</label>
+            <textarea id="conteudo" name="conteudo" placeholder="Escreva aqui o conteúdo da postagem" required></textarea>
+
+            <input type="submit" value="Postar">
+          </form>
         </div>
+
+        <script>
+            document.getElementById('blogForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const titulo = document.getElementById('titulo').value;
+                const conteudo = document.getElementById('conteudo').value;
+
+                if (titulo && conteudo) {
+                    alert('Postagem enviada com sucesso!');
+                    
+                    const postagem = {
+                      titulo: titulo,
+                      conteudo: conteudo,
+                      data: new Date().toLocaleString()
+
+                    };
+
+                    let postagens = JSON.parse(localStorage.getItem('postagens')) || [];
+
+                    postagens.unshift(postagem);
+
+                    localStorage.setItem('postagens', JSON.stringify(postagens));
+
+                    alert('Postagem enviada com sucesso!');
+                    window.location.href = "home.html";
+                }
+            });
+        </script>
     </main>
 </body>
 </html>
