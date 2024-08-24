@@ -17,34 +17,31 @@
           <li><a href="#">Home</a></li>
           <li><a href="#">Publicações</a></li>
           <li><a href="#">Sobre</a></li>
-          <a href="publicar.html">Nova Postagem</a>
+          <a id="publicar" href="publicar.html">Nova Postagem</a>
         </ul>
       </nav>
     </header>
     <main>
-
-
-
-
-
       <div class="container">
         <section class="container-destaque">
           <div class="container-titulo-destaque">
             <h3>Postagem em destaque</h3>
           </div>
-          <div class="artigo-destaque">oiii</div>
+          <div id="artigo-destaque"></div>
         </section>
         <section class="container-recentes">
           <div class="container-titulo-recente">
             <h3>Postagens recentes</h3>
           </div>
-          <div class="artigo-recente">oii</div>
+          <div id="artigo-recente"></div>
         </section>
       </div>
     </main>
       <script>
         document.addEventListener('DOMContentLoaded', function() {
           const postagens = JSON.parse(localStorage.getItem('postagens')) || [];
+          console.log(postagens)
+          console.log('aqui')
 
           const artigoDestaque = document.getElementById('artigo-destaque');
           const artigoRecente = document.getElementById('artigo-recente');
@@ -73,7 +70,7 @@
                 const postagemRecent = postagens[i];
 
                 const postagemRecentDiv = document.createElement('div');
-                postagemRecentDiv.classList.add('postagem-recent');
+                postagemRecentDiv.classList.add('postagem-recente');
 
                 const tituloRecent = document.createElement('h3');
                 tituloRecent.textContent = postagemRecent.titulo;
