@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     postagemDiv.classList.add("postagem");
 
     const imagem = document.createElement("img");
-    imagem.src = postagem.imagem || "\StandardPostImage.jpg";
+    imagem.src = postagem.imagem || `pages\\StandardPostImage.jpg`;
     imagem.alt = postagem.titulo;
     imagem.classList.add("imagem-destaque");
     postagemDiv.appendChild(imagem);
