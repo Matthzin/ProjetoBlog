@@ -57,6 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("postagens", JSON.stringify(postagens));
 
     alert("Publicação enviada com sucesso!");
-    window.location.href = "\\ProjetoBlog\index.html";
+    window.location.href = "\\ProjetoBlog\\index.html";
   }
 });
