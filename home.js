@@ -19,8 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
     postagemDiv.appendChild(breakline);
     
     const conteudo = document.createElement("p");
+    const breakline2 = document.createElement("br");
     conteudo.textContent = postagem.conteudo;
     postagemDiv.appendChild(conteudo);
+    postagemDiv.appendChild(breakline2);
+
     
     const data = document.createElement("p");
     data.classList.add("data");
@@ -44,9 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
       postagemRecentDiv.appendChild(conteudoRecent);
 
       const dataRecent = document.createElement("p");
+      const linha = document.createElement("hr");
+      linha.classList.add("linha");
       dataRecent.classList.add("data");
       dataRecent.textContent = `Publicado em: ${postagemRecent.data}`;
       postagemRecentDiv.appendChild(dataRecent);
+      postagemRecentDiv.appendChild(linha); 
 
       artigoRecente.appendChild(postagemRecentDiv);
     }
@@ -56,3 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
     artigoDestaque.appendChild(mensagem);
   }
 });
+
+
+

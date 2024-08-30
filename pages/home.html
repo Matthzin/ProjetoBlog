@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="\styles\home.css" />
     <script src="\home.js"></script>
-    <title>Projeto Blog</title>
+    <title>console.blog() | Página Inicial</title>
   </head>
   <body>
     <header>
@@ -17,21 +17,31 @@
           <li><a href="#">Home</a></li>
           <li><a href="#">Publicações</a></li>
           <li><a href="#">Sobre</a></li>
-          <a id="publicar" href="publicar.html">Nova Postagem</a>
+          <a id="publicar" href="publicar.html">Nova Publicação</a>
         </ul>
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <script>
+          document.querySelector(".burger").addEventListener("click", () => {
+            document.querySelector("nav ul").classList.toggle("active");
+          });
+        </script>
       </nav>
     </header>
     <main>
       <div class="container">
         <section class="container-destaque">
           <div class="container-titulo-destaque">
-            <h3>Postagem em destaque</h3>
+            <h3>Publicação em destaque</h3>
           </div>
           <div id="artigo-destaque"></div>
         </section>
         <section class="container-recentes">
           <div class="container-titulo-recente">
-            <h3>Postagens recentes</h3>
+            <h3>Publicações recentes</h3>
           </div>
           <div id="artigo-recente"></div>
         </section>
