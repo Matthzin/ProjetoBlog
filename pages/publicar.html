@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="\styles\testeHome.css">
+    <link rel="stylesheet" href="\styles\publicar.css">
+    <script src="\publicar.js"></script>
     <title>Nova Publicação | console.blog()</title>
 </head>
 <body>
@@ -36,39 +37,15 @@
             <label for="titulo">Título</label>
             <input type="text" id="titulo" name="titulo" placeholder="Digite o título da postagem" required>
 
+            <label for="imagem">Imagem da Capa</label>
+            <input type="file" id="imagem" name="imagem" accept="image/*"><br>
+
             <label for="conteudo">Conteúdo</label>
             <textarea id="conteudo" name="conteudo" placeholder="Escreva aqui o conteúdo da postagem" required></textarea>
 
             <input type="submit" value="Publicar">
           </form>
         </div>
-
-        <script>
-            document.getElementById('blogForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-
-                const titulo = document.getElementById('titulo').value;
-                const conteudo = document.getElementById('conteudo').value;
-
-                if (titulo && conteudo) {
-                    const postagem = {
-                      titulo: titulo,
-                      conteudo: conteudo,
-                      data: new Date().toLocaleString()
-
-                    };
-
-                    let postagens = JSON.parse(localStorage.getItem('postagens')) || [];
-
-                    postagens.unshift(postagem);
-
-                    localStorage.setItem('postagens', JSON.stringify(postagens));
-
-                    alert('Publicação enviada com sucesso!');
-                    window.location.href = "home.html";
-                }
-            });
-        </script>
     </main>
 </body>
 </html>
