@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="\ProjetoBlog\styles\publicar.css">
-    <!-- <link rel="stylesheet" href="\styles\publicar.css"> -->
-    <script src="\ProjetoBlog\publicar.js"></script>
-    <!-- <script src="\publicar.js"></script> -->
-    <title>Nova Publicação | console.blog()</title>
-</head>
-<body>
+    <!-- Link para Css da pagina publicar -->
+    <link rel="stylesheet" href="../styles/publicar.css"></link>
+    <link rel="stylesheet" href="../styles/nav.css"></link>
+    <!-- Link para puxar o js para a página </script> -->
+    <title>DevCraft | Nova Publicação</title>
+  </head>
+
+  <body>
     <header>
       <div class="logo">
-        <a id="logo" href="\ProjetoBlog\index.html">console.blog()</a>
+        <a id="logo" href="/index.html">DevCraft</a>
         <!-- <a id="logo" href="\index.html">console.blog()</a> -->
       </div>
       <nav>
         <ul>
-          <li><a href="\ProjetoBlog\index.html">Home</a></li>
-          <!-- <li><a href="\index.html">Home</a></li> -->
+          <li><a href="/index.html">Home</a></li>
+          <!-- <li>Retorna para a página principal</li> -->
           <li><a href="#">Publicações</a></li>
           <li><a href="#">Sobre</a></li>
         </ul>
@@ -27,29 +28,36 @@
           <div></div>
           <div></div>
         </div>
-        <script>
-          document.querySelector(".burger").addEventListener("click", () => {
-            document.querySelector("nav").classList.toggle("active");
-          });
-        </script>
       </nav>
     </header>
+
     <main>
-        <div class="container">
-          <h2>Escrever Nova Publicação</h2><br>
-          <form id="blogForm">
-            <label for="titulo">Título</label>
-            <input type="text" id="titulo" name="titulo" placeholder="Digite o título da postagem" required>
+      <div class="container">
+        <h2 id="title-pages">Escrever Nova Publicação</h2><br>
+        <form id="blogForm">
+          <label class="title-forms" for="titulo">Título</label>
+          <input type="text" id="titulo" name="titulo"
+            placeholder="Digite o título da postagem" required>
+          <label class="title-forms" for="imagem">Imagem da Capa</label>
+          <input type="file" id="imagem" name="imagem" accept="image/*"><br>
 
-            <label for="imagem">Imagem da Capa</label>
-            <input type="file" id="imagem" name="imagem" accept="image/*"><br>
+          <label class="title-forms" for="conteudo">Conteúdo</label>
+          <textarea id="conteudo" name="conteudo"
+            placeholder="Escreva aqui o conteúdo da postagem"
+            required></textarea>
 
-            <label for="conteudo">Conteúdo</label>
-            <textarea id="conteudo" name="conteudo" placeholder="Escreva aqui o conteúdo da postagem" required></textarea>
-
-            <input type="submit" value="Publicar">
-          </form>
-        </div>
+          <input type="submit" value="Publicar">
+        </form>
+      </div>
     </main>
-</body>
-</html>
+  </body>
+
+  <script>    
+    document.querySelector(".burger").addEventListener("click", () => {
+      document.querySelector("nav").classList.toggle("active");
+    });    
+  </script>
+
+  <script src="../js/publicar.js"></script>
+
+  </html>

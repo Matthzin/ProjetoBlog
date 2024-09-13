@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+
   const postagens = JSON.parse(localStorage.getItem("postagens")) || [];
 
   const artigoDestaque = document.getElementById("artigo-destaque");
@@ -7,11 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
   if (postagens.length > 0) {
     const postagem = postagens[0];
     const postagemDiv = document.createElement("div");
+    postagemDiv.className = "divContainer"
+    //criando uma div fixa
     postagemDiv.className = "post-destaque";
     postagemDiv.classList.add("postagem");
 
+    //Criando uma div para a imagem
     const imagem = document.createElement("img");
-    imagem.src = postagem.imagem || `pages\\StandardPostImage.jpg`;
+    imagem.src = postagem.imagem || `./image/StandardPostImage.jpg`;
     imagem.alt = postagem.titulo;
     imagem.classList.add("imagem-destaque");
     postagemDiv.appendChild(imagem);
@@ -24,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const conteudo = document.createElement("p");
     const breakline2 = document.createElement("br");
-    conteudo.textContent = postagem.conteudo;
+    conteudo.textContent = postagem.conteudo; 
     postagemDiv.appendChild(conteudo);
     postagemDiv.appendChild(breakline2);
 
@@ -59,9 +63,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       artigoRecente.appendChild(postagemRecentDiv);
     }
-  } else {
+  }
+  //cria mensagem caso não haja nenhuma postagem feita
+  else {
     const mensagem = document.createElement("p");
+    mensagem.className = "labels"; 
     mensagem.textContent = "Não há postagens para exibir. Que tal começar uma?";
     artigoDestaque.appendChild(mensagem);
+
   }
 });

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
 
-* {
+
+*{
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -22,35 +23,9 @@ header {
     /* Garante que a navbar esteja acima de outros elementos */
 }
 
-#logo {
-    font-family: 'Inconsolata', monospace;
-    font-size: 4vh;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-}
-
-nav ul li {
-    display: inline;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
 #publicar {
     padding: 10px;
-    background-color: #28a745;
+    background-color: #28b828;
     color: white;
     border: none;
     border-radius: 5px;
@@ -59,7 +34,7 @@ a {
 }
 
 #publicar:hover {
-    background-color: #218838;
+    background-color: #28b828;
 }
 
 /* Menu burger */
@@ -74,30 +49,6 @@ a {
     height: 3px;
     background-color: black;
     margin: 4px;
-}
-
-nav.active ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-}
-
-nav.active ul li {
-    width: 100%;
-    text-align: center;
-    padding: 15px 0;
-}
-
-nav.active ul li a {
-    width: 100%;
-    display: block;
 }
 
 #publicar {
@@ -127,7 +78,7 @@ input[type="file"] {
 input[type="file"]::-webkit-file-upload-button {
     padding: 10px 20px;
     color: white;
-    background-color: #28a745;
+    background-color: #28b828;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -136,13 +87,13 @@ input[type="file"]::-webkit-file-upload-button {
 }
 
 input[type="file"]::-webkit-file-upload-button:hover {
-    background-color: #218838;
+    background-color: #28b828;
 }
 
 input[type="file"]::-moz-file-upload-button {
     padding: 10px 20px;
     color: white;
-    background-color: #28a745;
+    background-color: #28b828;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -151,7 +102,7 @@ input[type="file"]::-moz-file-upload-button {
 }
 
 input[type="file"]::-moz-file-upload-button:hover {
-    background-color: #218838;
+    background-color: #28b828;
 }
 
 .container {
@@ -160,11 +111,13 @@ input[type="file"]::-moz-file-upload-button:hover {
     background-color: white;
     padding: 20px;
     border-radius: 2vh;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin-top: 20px;
+    border: 2px solid rgb(68, 61, 61);
 }
 
 h2 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     color: #333;
 }
@@ -206,7 +159,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #218838;
+    background-color: #28b828;
 }
 
 /* Responsividade */
