@@ -7,7 +7,7 @@ describe("Teste de envio de postagem para a página inicial", () => {
     cy.get('#conteudo').type("Conteúdo de teste para a postagem");
     cy.get('input[type="submit"]').click();
     cy.get("#artigo-destaque")
-      .should("contain", "Títlo de Teste")
+      .should("contain", "Título de Teste")
       .and("contain", "Conteúdo de teste para a postagem");
   });
 });
